@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+	transition: 200ms linear;
+	-webkit-transition: 200ms linear;
+	-moz-transition: 200ms linear;
+	-ms-transition: 200ms linear;
+	-o-transition: 200ms linear;
+}
+.thumbs {
+	@apply flex justify-center;
+}
+.control-dots {
+	@apply hidden;
+}
+
+.thumb img {
+	@apply w-full h-full;
+}
+.intro {
+	background-image: url('../src//assets//home//chef-service.jpg');
+}
+.featured {
+	background-image: url('../src//assets//home/featured.jpg'), linear-gradient(#292929d9, #040404cb);
+	background-blend-mode: overlay;
+	background-size: cover;
+	background-position: center center;
+}
+.authentication {
+	background-image: url('../src/assets/others/authentication.png');
+}
