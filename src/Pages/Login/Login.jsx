@@ -34,7 +34,17 @@ const Login = () => {
 				});
 				navigate(from, { replace: true });
 			})
-			.catch((err) => console.log(err.message));
+			.catch((err) => {
+				console.log(err.message);
+				e.target.reset();
+				setDisable(true);
+				loadCaptchaEnginge(6);
+				Swal.fire({
+					title: 'Failed to login!',
+					text: `${err.message}`,
+					icon: 'error'
+				});
+			});
 	};
 	const handleValidateCaptcha = (e) => {
 		e.preventDefault();

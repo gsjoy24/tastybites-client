@@ -26,7 +26,7 @@ const OurMenu = () => {
 				<title>Menu - TastyBites</title>
 			</Helmet>
 			<Cover img={coverBg} title='our menu' desc='Would you like to try a dish?' />
-			<SectionTitle heading={`TODAY'S OFFER`} subHeading={`---Don't miss---`} />
+			<SectionTitle heading={`TODAY'S OFFER`} subHeading={`Don't miss`} />
 			<MenuCategory items={offered} />
 			{/* dessert items */}
 			<MenuCategory

@@ -1,4 +1,3 @@
-
 import { Link, NavLink } from 'react-router-dom';
 import { FaCartPlus } from 'react-icons/fa';
 import useCart from '../../../Hooks/useCart';
@@ -20,11 +19,13 @@ const Navigation = () => {
 					CONTACT US
 				</NavLink>
 			</li>
-			<li>
-				<NavLink className={({ isActive }) => (isActive ? 'text-[#EEFF25]' : '')} to='/dashboard'>
-					DASHBOARD
-				</NavLink>
-			</li>
+			{user && (
+				<li>
+					<NavLink className={({ isActive }) => (isActive ? 'text-[#EEFF25]' : '')} to='/dashboard'>
+						DASHBOARD
+					</NavLink>
+				</li>
+			)}
 			<li>
 				<NavLink className={({ isActive }) => (isActive ? 'text-[#EEFF25]' : '')} to='/our-menu'>
 					OUR MENU

@@ -31,22 +31,27 @@ const SignUp = () => {
 						})
 							.then((res) => res.json())
 							.then((data) => {
-								if (data.InsertedId) {
-									reset();
-									console.log(result);
-									Swal.fire({
-										title: 'Signed up successfully!',
-										icon: 'success',
-										showConfirmButton: false,
-										timer: 2000
-									});
-									navigate('/');
-								}
+								reset();
+								console.log(result);
+								Swal.fire({
+									title: 'Signed up successfully!',
+									icon: 'success',
+									showConfirmButton: false,
+									timer: 2000
+								});
+								navigate('/');
 							});
 					})
 					.catch((err) => console.log(err.message));
 			})
-			.catch((err) => console.log(err.message));
+			.catch((err) => {
+				console.log(err.message);
+				Swal.fire({
+					title: 'Failed to Sign up!!',
+					text: `${err.message}`,
+					icon: 'error'
+				});
+			});
 	};
 
 	return (

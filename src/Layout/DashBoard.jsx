@@ -21,17 +21,17 @@ const DashBoard = () => {
 	const userNav = (
 		<>
 			<li>
-				<NavLink to='/dashboard/user-home'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff] ' : '')} to='/dashboard/user-home'>
 					<FaHome /> User Home
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/reservation'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/reservation'>
 					<FaCalendarAlt /> Reservation
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/payment-history'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/payment-history'>
 					<FaWallet /> Payment History
 				</NavLink>
 			</li>
@@ -47,28 +47,52 @@ const DashBoard = () => {
 	const adminNav = (
 		<>
 			<li>
-				<NavLink to='/dashboard/admin-home'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/admin-home'>
 					<FaHome /> Admin Home
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/add-items'>
-					<ImSpoonKnife /> Add Items
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/add-item'>
+					<ImSpoonKnife /> Add an Item
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/manage-items'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/manage-items'>
 					<AiOutlineBars /> manage items
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/manage-bookings'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/manage-bookings'>
 					<FaBook /> manage bookings
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/dashboard/all-users'>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/dashboard/all-users'>
 					<FaUsers /> all users
+				</NavLink>
+			</li>
+		</>
+	);
+	const commonNav = (
+		<>
+			<li>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/'>
+					<FaHome /> Home
+				</NavLink>
+			</li>
+			<li>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/our-menu'>
+					<FaBars /> Menu
+				</NavLink>
+			</li>
+			<li>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/order/salad'>
+					<FaShoppingBag /> Shop
+				</NavLink>
+			</li>
+			<li>
+				<NavLink className={({ isActive }) => (isActive ? 'text-[#fff]' : '')} to='/contact-us'>
+					<FaEnvelope /> Contact
 				</NavLink>
 			</li>
 		</>
@@ -76,38 +100,18 @@ const DashBoard = () => {
 	return (
 		<div className='drawer drawer-mobile'>
 			<input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
-			<div className='drawer-content flex flex-col items-center justify-center '>
-				<Outlet />
+			<div className='drawer-content flex flex-col items-center '>
 				<label htmlFor='my-drawer-2' className='btn btn-primary drawer-button lg:hidden'>
 					Open drawer
 				</label>
+				<Outlet />
 			</div>
 			<div className='drawer-side '>
 				<label htmlFor='my-drawer-2' className='drawer-overlay'></label>
 				<ul className='menu p-4 w-80 text-base-content bg-[#d1a054] uppercase'>
 					{isAdmin ? adminNav : userNav}
-
 					<div className='divider'></div>
-					<li>
-						<NavLink to='/'>
-							<FaHome /> Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/our-menu'>
-							<FaBars /> Menu
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/order/salad'>
-							<FaShoppingBag /> Shop
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/contact-us'>
-							<FaEnvelope /> Contact
-						</NavLink>
-					</li>
+					{commonNav}
 				</ul>
 			</div>
 		</div>

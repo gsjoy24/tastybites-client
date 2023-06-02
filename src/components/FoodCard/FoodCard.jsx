@@ -6,7 +6,7 @@ import useAuth from '../../Hooks/useAuth';
 
 const FoodCard = ({ item }) => {
 	const { _id, name, price, image, recipe } = item;
-	const { user } = useAuth;
+	const { user } = useAuth();
 	const [, refetch] = useCart();
 
 	const navigate = useNavigate();

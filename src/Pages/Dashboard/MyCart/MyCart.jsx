@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useCart from '../../../Hooks/useCart';
-import { FaRegArrowAltCircleRight, FaRegTrashAlt } from 'react-icons/fa';
+import { FaRegTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const MyCart = () => {
@@ -56,7 +56,7 @@ const MyCart = () => {
 			<Helmet>
 				<title>My Cart - TastyBites</title>
 			</Helmet>
-			<SectionTitle subHeading='---My Cart---' heading='wanna add more' />
+			<SectionTitle subHeading='My Cart' heading='wanna add more' />
 			<div className='uppercase font-semibold flex flex-col sm:flex-row justify-center items-center gap-5 sm:justify-evenly mb-6'>
 				<h3 className='text-3xl'>Total Items: {cart.length}</h3>
 				<h3 className='text-3xl'> Total price:{totalPrice}</h3>

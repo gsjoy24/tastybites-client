@@ -11,7 +11,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 const Category = () => {
 	return (
 		<section className='my-16 px-12'>
-			<SectionTitle subHeading='---From 11:00am to 10:00pm---' heading='ORDER ONLINE' />
+			<SectionTitle subHeading='From 11:00am to 10:00pm' heading='ORDER ONLINE' />
 			<Swiper
 				breakpoints={{
 					414: {

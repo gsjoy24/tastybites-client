@@ -3,7 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 const Featured = () => {
 	return (
 		<section className='text-white pt-16 bg-fixed featured my-12'>
-			<SectionTitle heading={'FROM OUR MENU'} subHeading={'---Check it out---'} />
+			<SectionTitle heading={'FROM OUR MENU'} subHeading={'Check it out'} />
 			<div className='flex flex-col md:flex-row justify-center items-center gap-8 pb-20 px-5'>
 				<img className='max-w-sm w-full' src={featuredImg} alt='featured' />
 				<div className='max-w-md'>
