@@ -2,10 +2,12 @@ import { Link, NavLink } from 'react-router-dom';
 import { FaCartPlus } from 'react-icons/fa';
 import useCart from '../../../Hooks/useCart';
 import useAuth from '../../../Hooks/useAuth';
+import useAdmin from '../../../Hooks/useAdmin';
 
 const Navigation = () => {
 	const { user, logoutUser } = useAuth();
 	const [cart] = useCart();
+	const [isAdmin] = useAdmin();
 
 	const navItems = (
 		<>
@@ -21,7 +23,9 @@ const Navigation = () => {
 			</li>
 			{user && (
 				<li>
-					<NavLink className={({ isActive }) => (isActive ? 'text-[#EEFF25]' : '')} to='/dashboard'>
+					<NavLink
+						className={({ isActive }) => (isActive ? 'text-[#EEFF25]' : '')}
+						to={isAdmin ? '/dashboard/admin-home' : '/dashboard/user-home'}>
 						DASHBOARD
 					</NavLink>
 				</li>
